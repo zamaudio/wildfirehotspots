@@ -10,18 +10,18 @@
     <script>
   var yellow1 = new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
     opacity: 0.75,
-    src: 'fire_yellow.png',
-    scale : 0.2
+    src: 'fire.png',
+    scale : 0.15
   }));
   var orange1 = new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
     opacity: 0.75,
-    src: 'fire_orange.png',
+    src: 'fire.png',
     scale : 0.2
   }));
   var green1 = new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
     opacity: 0.75,
-    src: 'fire_green.png',
-    scale : 0.2
+    src: 'fire.png',
+    scale : 0.1
   }));
       var styles = {
         'PointGreen': new ol.style.Style({
