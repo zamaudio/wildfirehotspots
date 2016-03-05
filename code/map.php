@@ -8,22 +8,21 @@
   <body>
     <div id="map" class="map"></div>
     <script>
-      var red1 = new ol.style.Circle({
-        radius: 5,
-        fill: new ol.style.Stroke({color: 'red'}),
-        stroke: new ol.style.Stroke({color: 'red', width: 1})
-      });
-      var yellow1 = new ol.style.Circle({
-        radius: 5,
-        fill: new ol.style.Stroke({color: 'yellow'}),
-        stroke: new ol.style.Stroke({color: 'yellow', width: 1})
-      });
-      var green1 = new ol.style.Circle({
-        radius: 5,
-        fill: new ol.style.Stroke({color: 'green'}),
-        stroke: new ol.style.Stroke({color: 'green', width: 1})
-      });
-
+  var yellow1 = new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
+    opacity: 0.75,
+    src: 'fire_yellow.png',
+    scale : 0.2
+  }));
+  var orange1 = new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
+    opacity: 0.75,
+    src: 'fire_orange.png',
+    scale : 0.2
+  }));
+  var green1 = new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
+    opacity: 0.75,
+    src: 'fire_green.png',
+    scale : 0.2
+  }));
       var styles = {
         'PointGreen': new ol.style.Style({
           image: green1
@@ -32,7 +31,7 @@
           image: yellow1
         }),
         'PointRed': new ol.style.Style({
-          image: red1
+          image: orange1
         }),
       };
 
@@ -65,6 +64,14 @@
         layers: [
           new ol.layer.Tile({
             source: new ol.source.OSM()
+          }),
+          new ol.layer.Tile({
+             source: new ol.source.TileWMS(/** @type {olx.source.TileWMSOptions} */ ({
+               url: 'http://data.auscover.org.au/geoserver/wms',
+               params: {'LAYERS': 'clw:FractCover.V2_2.PV', 'TILED': true},
+               serverType: 'geoserver'
+               })
+             )
           }),
           vectorLayer
         ],
