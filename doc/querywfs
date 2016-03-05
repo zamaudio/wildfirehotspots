@@ -1,0 +1,9 @@
+
+
+http://sentinel.ga.gov.au/geoserver/wfs?SERVICE=WFS&REQUEST=GetFeature&VERSION=1.1.0&maxFeatures=5&typeName=sentinel:satellite_pass_last_hotspot
+
+
+http://sentinel.ga.gov.au/geoserver/wfs?version=1.1.1&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=sentinel:hotspot_current&SRSNAME=EPSG:3857
+
+
+http://sentinel.ga.gov.au/geoserver/wfs?version=1.1.1&SERVICE=WFS&REQUEST=GetFeature&TYPENAME=sentinel:hotspot_current&SRSNAME=EPSG:3857&outputformat=json
