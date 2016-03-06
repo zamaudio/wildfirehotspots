@@ -4,9 +4,18 @@
     <title>WildFireHotspots</title>
     <link rel="stylesheet" href="http://openlayers.org/en/v3.14.1/css/ol.css" type="text/css">
     <script src="http://openlayers.org/en/v3.14.1/build/ol.js"></script>
+    <style>
+      #leftcolumn { width: 150px; border: none; float: left}
+      #rightcolumn { width: 1200px; border: none; float: left}
+    </style>
   </head>
   <body>
-    <div id="map" class="map"></div>
+    <div id="leftcolumn">
+      <img src="legend.png" />
+    </div>
+    <div id="rightcolumn">
+      <div id="map" class="map"></div>
+    </div>
     <script>
   var yellow1 = new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
     opacity: 0.75,
@@ -71,7 +80,8 @@
                params: {'LAYERS': 'clw:FractCover.V2_2.PV', 'TILED': true},
                serverType: 'geoserver'
                })
-             )
+             ),
+	     opacity : 0.6
           }),
           vectorLayer
         ],
@@ -82,10 +92,12 @@
           })
         }),
         view: new ol.View({
-          center: [14188175,-2031939],
+          center: [14000000,-2800000],
           zoom: 4
-        })
+        }),
+	size : [1100, 800]
       });
     </script>
+  </div>
   </body>
 </html>
